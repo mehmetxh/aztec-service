@@ -1,5 +1,5 @@
 # aztec-service
-öncelikle docker durduruyoruz ve siliyoruz
+First we stop and delete docker
 ```bash
 docker stop id
 docker rm id
@@ -29,3 +29,18 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
+
+0xYourPrivateKey ; Metamask Private key
+0xYourAddress ; address
+RPC_URL ; Sepolia RPC
+BEACON_URL ; Beacon RPC
+```bash
+systemctl daemon-reload
+systemctl enable aztec.service
+sudo systemctl restart aztec.service
+journalctl -fu aztec.service -o cat
+```
+
+![image](https://github.com/user-attachments/assets/e0bb5d9f-de02-4fb2-8af8-bcab05d1b93d)
+
+@molla202 hocama teşekkürler 
